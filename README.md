@@ -33,10 +33,28 @@
 | Icon | Menampilkan icon yang dibutuhkan sesuai propertinya |
 
 ## Const vs Final
-(bentar makan dulu)
+| const | final |
+| ----- | ----- |
+| Const dapat digunakan untuk deklarasi variabel immutable yang nilainya bersifat konstan. Setiap kali perlakuan render tetap dapat terinisiasi ulang sesuai nilainya sehingga lebih fleksibel pada keadaan yang memerlukan render data. Akan tetapi, tetap saja const tidak dapat diubah saat berada di runtime satu kali cycle program. | Final berarti single-assignment, sebuah final variabel perlu diinisiasi, sekalinya diinisiasi, nilai variabel tidak dapat diubah. Final dapat dimanfaatkan untuk meletakkan data-data yang tidak akan berubah sekalipun ada rendering (reload) |
 
 ## Project Implementation
-(bentar makan dulu)
+1.  Membuat aplikasi Flutter bernama counter_7 dengan command
+    `flutter create counter_7`
+2.  Menambahkan modules dari import flutter package dan fungsi main() yang dieksekusi pertama kali oleh Flutter pada main.dart
+3.  Mengarahkan runApp() menuju aplikasi terkait 'CounterSeven'
+4.  Menyusun CounterSeven sebagai StatelessWidget dan menambahkan MaterialApp widget untuk menginisiasikan hal-hal penting yang ditampilkan dalam aplikasi
+5.  Mengarahkan home: menuju halaman CounterPage yang sudah diimport dari directory /pages/CounterPage.dart
+6.  Menyusun CounterPage sebagai StatefulWidget dengan beberapa atributnya seperti judul dan key. Kemudian menambahkan state _CounterState() ke dalam widget untuk menyimpan internal state dari nilai _counter
+7.  Menyusun _CounterState sebagai widget yang digunakan untuk menampilkan hasil counter
+8.  Menginisiasikan _counter = 0 untuk state awal, lalu menambahkan dua fungsi _decrementCounter() dan _incrementCounter() yang digunakan untuk mengeset state menuju nilai yang diinginkan, yaitu -1 untuk _decrementCounter() dan +1 untuk _incrementCounter()
+9.  Menyusun widget dengan Scaffold yang digunakan untuk menyimpan beberapa widget lain di dalamnya
+10. Menambahkan title pada Widget AppBar dan mengatur alignment dari title tersebut
+11. Menambahkan body dengan Widget Center untuk meletakkan child widget ke tengah
+12. Children widget pada body berisi Widget Text yang digunakan untuk menampilkan "GANJIL" vs "GENAP" sesuai kondisi nilai _counter saat ini beserta dengan TextStylenya. Jika _counter % 2 == 0 maka tampilkan blok "GENAP", sebaliknya tampilkan blok "GANJIL"
+13. Menambahkan dua button yaitu decrement & increment button menggunakan Widget FloatingActionButton yang disimpan dalam Widget Row (inline-flex posisi dari buttonya) di dalam Container.
+14. Mengarahkan atribut onPressed: pada button ke fungsi yang sesuai setStatenya, decrement button ke _decrementCounter dan increment button ke _incrementButton
+15. Menambahkan ikon ke button sesuai dengan permintaan soal, ikon negatif (Icons.remove) dan ikon plus (Icons.add)
+16. Menambahkan alur logika dari button decrement. Jika _counter > 0 maka tampilkan FloatingActionButton decrement, jika tidak maka tampilkan SizedBox() (widget kosong) untuk menghilangkan button saat nilai _counter <= 0
 
 ## Mario's References
 -   Icons Flutter Class<br>

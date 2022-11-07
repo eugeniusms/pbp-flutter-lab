@@ -7,7 +7,7 @@ void main() {
 class MyApp extends StatelessWidget {
   const MyApp({super.key});
 
-  // Widget root of application.
+  // widget root of application.
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
@@ -30,14 +30,20 @@ class MyHomePage extends StatefulWidget {
 }
 
 class _MyHomePageState extends State<MyHomePage> {
+  // variabel counter bernilai private
   int _counter = 0;
 
+  // decremenet setState(counter)
   void _decrementCounter() {
     setState(() {
-      _counter--;
+      // decrement hanya berjalan saat _counter > 0 (tidak bisa negatif)
+      if (_counter > 0) {
+        _counter--;
+      }
     });
   }
 
+  // increment setState(counter)
   void _incrementCounter() {
     setState(() {
       _counter++;
@@ -54,29 +60,48 @@ class _MyHomePageState extends State<MyHomePage> {
       body: Center(
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
+
           children: <Widget>[
-            const Text(
-              'You have pushed the button this many times:',
-            ),
-            Text(
-              '$_counter',
-              style: Theme.of(context).textTheme.headline4,
-            ),
+            // menampilkan ganjil vs genap sesuai kondisi
+            _counter % 2 == 0 ? 
+                  // saat habis dibagi 0
+                  const Text(
+                    "GENAP", 
+                    style: TextStyle(
+                      color: Colors.red,
+                    ),
+                  ) :
+                  // saat tidak habis dibagi 0
+                  const Text(
+                    "GANJIL",
+                    style: TextStyle(
+                      color: Colors.blue,
+                    ),
+                  ),
+              Text(
+                // menampilkan nilai _counter
+                '$_counter',
+                style: Theme.of(context).textTheme.headline4,
+              ),
           ],
+
         ),
       ),
       
+      // menambahkan tombol increment dan decrement
       floatingActionButton: Container(
           width: double.infinity,
           margin: const EdgeInsets.only(left:35, bottom: 5),
           child: Row(
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
             children: [
+              // decrement button
               FloatingActionButton(
                 onPressed: _decrementCounter,
                 tooltip: 'Decrement',
                 child: const Icon(Icons.remove),
               ),
+              // increment button
               FloatingActionButton(
                 onPressed: _incrementCounter,
                 tooltip: 'Increment',
@@ -85,6 +110,7 @@ class _MyHomePageState extends State<MyHomePage> {
             ],
           ),
         )
+
     );
   }
 }

@@ -120,3 +120,4 @@ class _MyHomePageState extends State<MyHomePage> {
 // References:
 // 1) https://api.flutter.dev/index.html
 // 2) https://googleflutter.com/flutter-center-align-title-in-appbar/#:~:text=Flutter%20%E2%80%93%20Center%20Align%20Application%20Bar,the%20centerTitle%20property%20to%20true.
+// 3) https://stackoverflow.com/questions/53455358/how-to-present-an-empty-view-in-flutter

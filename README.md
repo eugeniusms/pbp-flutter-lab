@@ -54,7 +54,7 @@
 13. Menambahkan dua button yaitu decrement & increment button menggunakan Widget FloatingActionButton yang disimpan dalam Widget Row (inline-flex posisi dari buttonya) di dalam Container.
 14. Mengarahkan atribut onPressed: pada button ke fungsi yang sesuai setStatenya, decrement button ke _decrementCounter dan increment button ke _incrementButton
 15. Menambahkan ikon ke button sesuai dengan permintaan soal, ikon negatif (Icons.remove) dan ikon plus (Icons.add)
-16. Menambahkan alur logika dari button decrement. Jika _counter > 0 maka tampilkan FloatingActionButton decrement, jika tidak maka tampilkan SizedBox() (widget kosong) untuk menghilangkan button saat nilai _counter <= 0
+16. `BONUS` Menambahkan alur logika dari button decrement. Jika _counter > 0 maka tampilkan FloatingActionButton decrement, jika tidak maka tampilkan SizedBox() (widget kosong) untuk menghilangkan button saat nilai _counter <= 0
 
 ## Mario's References
 -   Icons Flutter Class<br>

@@ -1,11 +1,11 @@
 import 'package:flutter/material.dart';
 
 void main() {
-  runApp(const MyApp());
+  runApp(const CounterSeven());
 }
 
-class MyApp extends StatelessWidget {
-  const MyApp({super.key});
+class CounterSeven extends StatelessWidget {
+  const CounterSeven({super.key});
 
   // widget root of application.
   @override

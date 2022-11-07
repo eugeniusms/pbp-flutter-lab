@@ -11,7 +11,7 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      title: 'Flutter Demo',
+      title: 'Counter 7',
       theme: ThemeData(
         primarySwatch: Colors.blue,
       ),
@@ -32,6 +32,12 @@ class MyHomePage extends StatefulWidget {
 class _MyHomePageState extends State<MyHomePage> {
   int _counter = 0;
 
+  void _decrementCounter() {
+    setState(() {
+      _counter--;
+    });
+  }
+
   void _incrementCounter() {
     setState(() {
       _counter++;
@@ -43,6 +49,7 @@ class _MyHomePageState extends State<MyHomePage> {
     return Scaffold(
       appBar: AppBar(
         title: Text(widget.title),
+        centerTitle: false,
       ),
       body: Center(
         child: Column(
@@ -58,11 +65,30 @@ class _MyHomePageState extends State<MyHomePage> {
           ],
         ),
       ),
-      floatingActionButton: FloatingActionButton(
-        onPressed: _incrementCounter,
-        tooltip: 'Increment',
-        child: const Icon(Icons.add),
-      ),
+      
+      floatingActionButton: Container(
+          width: double.infinity,
+          margin: const EdgeInsets.only(left:35, bottom: 5),
+          child: Row(
+            mainAxisAlignment: MainAxisAlignment.spaceBetween,
+            children: [
+              FloatingActionButton(
+                onPressed: _decrementCounter,
+                tooltip: 'Decrement',
+                child: const Icon(Icons.remove),
+              ),
+              FloatingActionButton(
+                onPressed: _incrementCounter,
+                tooltip: 'Increment',
+                child: const Icon(Icons.add),
+              ),
+            ],
+          ),
+        )
     );
   }
 }
+
+// References:
+// 1) https://api.flutter.dev/index.html
+// 2) https://googleflutter.com/flutter-center-align-title-in-appbar/#:~:text=Flutter%20%E2%80%93%20Center%20Align%20Application%20Bar,the%20centerTitle%20property%20to%20true.

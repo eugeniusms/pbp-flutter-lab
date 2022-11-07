@@ -15,21 +15,21 @@ class CounterSeven extends StatelessWidget {
       theme: ThemeData(
         primarySwatch: Colors.blue,
       ),
-      home: const MyHomePage(title: 'Program Counter'),
+      home: const CounterPage(title: 'Program Counter'),
     );
   }
 }
 
-class MyHomePage extends StatefulWidget {
-  const MyHomePage({super.key, required this.title});
+class CounterPage extends StatefulWidget {
+  const CounterPage({super.key, required this.title});
 
   final String title;
 
   @override
-  State<MyHomePage> createState() => _MyHomePageState();
+  State<CounterPage> createState() => _CounterState();
 }
 
-class _MyHomePageState extends State<MyHomePage> {
+class _CounterState extends State<CounterPage> {
   // variabel counter bernilai private
   int _counter = 0;
 

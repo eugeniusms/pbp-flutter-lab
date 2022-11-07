@@ -63,21 +63,21 @@ class _MyHomePageState extends State<MyHomePage> {
 
           children: <Widget>[
             // menampilkan ganjil vs genap sesuai kondisi
-            _counter % 2 == 0 ? 
+            _counter % 2 == 0 
                   // saat habis dibagi 0
-                  const Text(
-                    "GENAP", 
-                    style: TextStyle(
-                      color: Colors.red,
-                    ),
-                  ) :
+                  ? const Text(
+                      "GENAP", 
+                      style: TextStyle(
+                        color: Colors.red,
+                      ),
+                    )
                   // saat tidak habis dibagi 0
-                  const Text(
-                    "GANJIL",
-                    style: TextStyle(
-                      color: Colors.blue,
+                  : const Text(
+                      "GANJIL",
+                      style: TextStyle(
+                        color: Colors.blue,
+                      ),
                     ),
-                  ),
               Text(
                 // menampilkan nilai _counter
                 '$_counter',
@@ -96,11 +96,13 @@ class _MyHomePageState extends State<MyHomePage> {
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
             children: [
               // decrement button
-              FloatingActionButton(
-                onPressed: _decrementCounter,
-                tooltip: 'Decrement',
-                child: const Icon(Icons.remove),
-              ),
+              _counter > 0 
+                ? FloatingActionButton(
+                  onPressed: _decrementCounter,
+                  tooltip: 'Decrement',
+                  child: const Icon(Icons.remove),
+                ) 
+                : const SizedBox(), // jika _counter <= 0 maka tidak menampilkan tombol decrement
               // increment button
               FloatingActionButton(
                 onPressed: _incrementCounter,

@@ -101,9 +101,9 @@ class _FormBudgetState extends State<FormBudget> {
                               decoration: InputDecoration(
                                 hintText: "Contoh: 17150",
                                 labelText: "Nominal",
-                                // menambahkan rounded border sebesar 5 pixel
+                                // menambahkan rounded border sebesar 10 pixel
                                 border: OutlineInputBorder(
-                                  borderRadius: BorderRadius.circular(5.0),
+                                  borderRadius: BorderRadius.circular(10.0),
                                 ),
                               ),
                               // mengubah state isi dari nominal sesuai value ketika ada perubahan
@@ -212,9 +212,10 @@ class _FormBudgetState extends State<FormBudget> {
                             _dateTime != null) {
                           ListBudget.data.add(
                               Budget(_judul, _nominal, _jenis!, _dateTime!));
+                          _showToast(context, true);
                           clearInput();
                         } else {
-                          // jika tidak tervalidasi do nothing
+                          _showToast(context, false);
                         }
                       },
                       // button
@@ -226,6 +227,28 @@ class _FormBudgetState extends State<FormBudget> {
                   )
                 ],
               ))),
+    );
+  }
+
+  // menampilkan toast saat valid dan tidak valid
+  void _showToast(BuildContext context, bool isValid) {
+    final scaffold = ScaffoldMessenger.of(context);
+    scaffold.showSnackBar(
+      SnackBar(
+        // saat valid maka warna hijau, sebaliknya merah
+        backgroundColor: isValid ?  Colors.green : Colors.red,
+        // saat valid maka text menampilkan 'Budget berhasil disimpan', sebaliknya 'Isian masih belum lengkap :)'
+        content: Text(isValid
+            ? "Budget berhasil disimpan!"
+            : "Isian masih belum lengkap :)"),
+        // menambahkan actio
+        action: SnackBarAction(
+            label: 'Close',
+            textColor: Colors.white,
+            onPressed: () {
+              scaffold.hideCurrentSnackBar;
+            }),
+      ),
     );
   }
 }

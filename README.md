@@ -59,13 +59,14 @@
 # Tugas 8
 
 ## Navigator.push vs Navigator.pushReplacement
-1.  Navigator.pushReplacement 
+1.  Navigator.pushReplacement<br>
     Navigator ini akan menimpa halaman sekarang dengan halaman baru
-2.  Navigator.push 
+2.  Navigator.push<br>
     Navigator ini akan menambahkan rute lain ke atas tumpukan screen stack saat ini
 
 ## Tugas 8's Widgets
 | Widget | Fungsi | 
+| ----- | ----- |
 | Drawer | Membuat drawer navigator |
 | ListTile | Membuat list beberapa tile |
 | MaterialPageRoute | Mengarahkan routing ke halaman (widget) tertentu |
@@ -82,6 +83,7 @@
 
 ## Tugas 8's Events
 | Event | Penjelasan |
+| ----- | ----- |
 | onPressed | Event yang terjadi ketika user telah selesai menekan | 
 | onTap | Event yang terjadi ketika sesaat setelah klik |
 | onChanged | Event yang terjadi ketika ada perubahan | 

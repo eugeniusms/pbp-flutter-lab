@@ -92,6 +92,21 @@
 Navigator bekerja selayaknya sebuah stack yang memiliki paradigma LIFO yaitu Last In First Out. Stack ini diterapkan pada layar untuk menampilkan layar dengan cara "PUSH" dan layar yang ditampilkan tersebut merupakan "TOP OF STACK", sedangkan layar sebelumnya berada di bawah dari "TOP OF STACK" dan seterusnya selama proses "PUSH" dan "POP" terjadi.
 
 ## Project Implementation
+1.  Menambahkan Drawer menu pada app counter_7
+2.  Drawer disusun dengan memiliki 3 menu yaitu CounterPage, FormBudgetPage, dan ShowBudgetPage
+3.  Membuat 2 file yang belum ada di dalam Drawer yaitu FormBudgetPage dan ShowBudgetPage
+4.  Menyusun halaman FormBudgetPage
+5.  Menambahkan input dengan tipe data String bernama judul
+6.  Menambahkan input dengan tipe data integer bernama nominal
+7.  Menambahkan elemen dropdown untuk menyeleksi "Pengeluaran/Pemasukan"
+8.  Menambahkan button untuk menyimpan budget
+9.  `BONUS` Menambahkan date picker 
+10. Menambahkan toast saat tombol simpan diklik
+11. Menyusun halaman ShowBudgetPage
+12. `BONUS` Refactoring widget
+13. Widget Budget masuk ke dalam components untuk menyimpan Budget dan sebagai kerangkanya
+14. Mengambil data dari Budget ke dalam ShowBudgetPage
+15. Menyusun card dan style untuk membedakan pengeluaran dan pemasukan
 
 ## Mario's References
 -   Icons Flutter Class<br>

@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:counter_7/pages/CounterPage.dart';
-import 'package:counter_7/pages/Form.dart';
-import 'package:counter_7/pages/ShowBudget.dart';
+import 'package:counter_7/pages/FormBudgetPage.dart';
+import 'package:counter_7/pages/ShowBudgetPage.dart';
 
 // merupakan sebuah Drawer yang digunakan untuk navigasi antar page
 Drawer buildDrawer(BuildContext context) {
@@ -28,7 +28,7 @@ Drawer buildDrawer(BuildContext context) {
           onTap: () {
             Navigator.pushReplacement(
               context,
-              MaterialPageRoute(builder: (context) => const FormBudget()),
+              MaterialPageRoute(builder: (context) => const FormBudgetPage()),
             );
           },
         ),
@@ -36,10 +36,10 @@ Drawer buildDrawer(BuildContext context) {
         ListTile(
           title: const Text('Data Budget'),
           onTap: () {
-            // saat diklik maka Navigator akan mengarahkan ke halaman ShowBudget
+            // saat diklik maka Navigator akan mengarahkan ke halaman ShowBudgetPage
             Navigator.pushReplacement(
               context,
-              MaterialPageRoute(builder: (context) => const ShowBudget()),
+              MaterialPageRoute(builder: (context) => const ShowBudgetPage()),
             );
           },
         ),

@@ -1,17 +1,17 @@
 import 'package:flutter/material.dart';
-import 'package:counter_7/pages/Drawer.dart';
-import 'package:counter_7/pages/Budget.dart';
+import 'package:counter_7/components/Drawer.dart';
+import 'package:counter_7/components/Budget.dart';
 
 // merupakan halaman form budget
-class FormBudget extends StatefulWidget {
-  const FormBudget({super.key});
+class FormBudgetPage extends StatefulWidget {
+  const FormBudgetPage({super.key});
 
   @override
-  State<FormBudget> createState() => _FormBudgetState();
+  State<FormBudgetPage> createState() => _FormBudgetPageState();
 }
 
 // merupakan halaman dengan state form budget page
-class _FormBudgetState extends State<FormBudget> {
+class _FormBudgetPageState extends State<FormBudgetPage> {
   // inisiasi variabel form
   final _formKey = GlobalKey<FormState>();
   String _judul = "";

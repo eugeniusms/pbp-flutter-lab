@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart'; // import ui material dari flutter
+import 'package:counter_7/pages/Drawer.dart';
 
 // CounterPage is a statefulwidget
 class CounterPage extends StatefulWidget { 
@@ -42,6 +43,7 @@ class _CounterState extends State<CounterPage> {
         title: Text(widget.title),
         centerTitle: false,
       ),
+      drawer: buildDrawer(context), // build drawer
       // body center disusun dengan isi kolom dari child
       body: Center(
         child: Column(

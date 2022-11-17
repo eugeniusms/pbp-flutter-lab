@@ -14,7 +14,7 @@
 | Lebih ringan dirender | Memerlukan waktu reload render |
 | Cocok untuk widget tanpa perubahan data di dalamnya | Diperlukan untuk menyusun widget dengan pengolahan data yang interaktif | 
 
-## counter_7's Widget
+## counter_7's Widgets
 | Widget | Fungsi |
 | ----- | ----- |
 | CounterSeven | Inisiasi aplikasi |
@@ -55,6 +55,41 @@
 14. Mengarahkan atribut onPressed: pada button ke fungsi yang sesuai setStatenya, decrement button ke _decrementCounter dan increment button ke _incrementButton
 15. Menambahkan ikon ke button sesuai dengan permintaan soal, ikon negatif (Icons.remove) dan ikon plus (Icons.add)
 16. `BONUS` Menambahkan alur logika dari button decrement. Jika _counter > 0 maka tampilkan FloatingActionButton decrement, jika tidak maka tampilkan SizedBox() (widget kosong) untuk menghilangkan button saat nilai _counter <= 0
+
+# Tugas 8
+
+## Navigator.push vs Navigator.pushReplacement
+1.  Navigator.pushReplacement 
+    Navigator ini akan menimpa halaman sekarang dengan halaman baru
+2.  Navigator.push 
+    Navigator ini akan menambahkan rute lain ke atas tumpukan screen stack saat ini
+
+## Tugas 8's Widgets
+| Widget | Fungsi | 
+| Drawer | Membuat drawer navigator |
+| ListTile | Membuat list beberapa tile |
+| MaterialPageRoute | Mengarahkan routing ke halaman (widget) tertentu |
+| FormBudgetPage | Widget buatan sendiri untuk menampilkan halaman form |
+| OutlineInputBorder | Menambahkan border pada input |
+| InputDecoration | Menambahkan dekorasi input |
+| ButtonStyle | Menambahkan style button |
+| SnackBar | Menampilkan SnackBar |
+| SingleChildScrollView | Menyusun scroll type dari suatu body |
+| Card | Membuat card |
+| TextFormField | Membuat input field |
+| DropdownButtonFormField | Membuat dropdown sesuai validasi input |
+| Spacer | Membuat space fleksibel |
+
+## Tugas 8's Events
+| Event | Penjelasan |
+| onPressed | Event yang terjadi ketika user telah selesai menekan | 
+| onTap | Event yang terjadi ketika sesaat setelah klik |
+| onChanged | Event yang terjadi ketika ada perubahan | 
+
+## Cara Kerja Navigator
+Navigator bekerja selayaknya sebuah stack yang memiliki paradigma LIFO yaitu Last In First Out. Stack ini diterapkan pada layar untuk menampilkan layar dengan cara "PUSH" dan layar yang ditampilkan tersebut merupakan "TOP OF STACK", sedangkan layar sebelumnya berada di bawah dari "TOP OF STACK" dan seterusnya selama proses "PUSH" dan "POP" terjadi.
+
+## Project Implementation
 
 ## Mario's References
 -   Icons Flutter Class<br>

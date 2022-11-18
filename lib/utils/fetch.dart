@@ -1,6 +1,6 @@
 import 'package:http/http.dart' as http;
 import 'dart:convert';
-import 'package:counter_7/models/mywatchlist.dart';
+import 'package:counter_7/models/watchlist.dart';
 
 Future<List<Watchlist>> fetchWatchlist() async {
   var url = Uri.parse(

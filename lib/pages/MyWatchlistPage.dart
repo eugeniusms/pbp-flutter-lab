@@ -28,7 +28,7 @@ class _MyWatchlistPageState extends State<MyWatchlistPage> {
                 return Column(
                   children: const [
                     Text(
-                      "Tidak ada to do list :(",
+                      "Tidak ada watchlist :(",
                       style: TextStyle(color: Color(0xff59A5D8), fontSize: 20),
                     ),
                     SizedBox(height: 8),
@@ -59,7 +59,7 @@ class _MyWatchlistPageState extends State<MyWatchlistPage> {
                                 ),
                               ),
                               const SizedBox(height: 10),
-                              Text("${snapshot.data![index].completed}"),
+                              // Text("${snapshot.data![index].completed}"),
                             ],
                           ),
                         ));

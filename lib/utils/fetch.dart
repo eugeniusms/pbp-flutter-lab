@@ -26,3 +26,6 @@ Future<List<Watchlist>> fetchWatchlist() async {
 
   return listWatchlist;
 }
+
+// REFERENCES
+// 1) https://stackoverflow.com/questions/65630743/how-to-solve-flutter-web-api-cors-error-only-with-dart-code

@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:counter_7/pages/CounterPage.dart';
 import 'package:counter_7/pages/FormBudgetPage.dart';
 import 'package:counter_7/pages/ShowBudgetPage.dart';
+import 'package:counter_7/pages/MyWatchlistPage.dart';
 
 // merupakan sebuah Drawer yang digunakan untuk navigasi antar page
 Drawer buildDrawer(BuildContext context) {
@@ -40,6 +41,17 @@ Drawer buildDrawer(BuildContext context) {
             Navigator.pushReplacement(
               context,
               MaterialPageRoute(builder: (context) => const ShowBudgetPage()),
+            );
+          },
+        ),
+        // navigasi ke halaman "My Watchlist"
+        ListTile(
+          title: const Text('My Watchlist'),
+          onTap: () {
+            // saat diklik maka Navigator akan mengarahkan ke halaman MyWatchlistPage
+            Navigator.pushReplacement(
+              context,
+              MaterialPageRoute(builder: (context) => const MyWatchlistPage()),
             );
           },
         ),

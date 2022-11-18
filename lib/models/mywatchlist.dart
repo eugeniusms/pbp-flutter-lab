@@ -9,28 +9,36 @@ String todoToJson(List<Watchlist> data) =>
 
 class Watchlist {
   Watchlist({
-    required this.userId,
     required this.id,
+    required this.watched,
     required this.title,
-    required this.completed,
+    required this.rating,
+    required this.release_date,
+    required this.review,
   });
 
-  int userId;
   int id;
+  bool watched;
   String title;
-  bool completed;
+  int rating;
+  DateTime release_date;
+  String review;
 
   factory Watchlist.fromJson(Map<String, dynamic> json) => Watchlist(
-        userId: json["userId"],
-        id: json["id"],
+        id: json["pk"],
+        watched: json["watched"],
         title: json["title"],
-        completed: json["completed"],
+        rating: json["rating"],
+        release_date: DateTime.parse(json["release_date"]),
+        review: json["review"],
       );
 
   Map<String, dynamic> toJson() => {
-        "userId": userId,
         "id": id,
+        "watched": watched,
         "title": title,
-        "completed": completed,
+        "rating": rating,
+        "release_date": release_date.toIso8601String(),
+        "review": review,
       };
 }

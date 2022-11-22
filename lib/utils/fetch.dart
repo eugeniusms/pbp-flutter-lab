@@ -7,9 +7,9 @@ Future<List<Watchlist>> fetchWatchlist() async {
   var url = Uri.parse(
       'https://pbp-assignment-eugeniusms.herokuapp.com/mywatchlist/json/');
   print("MASUK 2");
-  var response = await http.get(url,headers: {
-      "Access-Control-Allow-Origin": "*",
-      "Content-Type": "application/json",
+  var response = await http.get(url, headers: {
+    "Access-Control-Allow-Origin": "*",
+    "Content-Type": "application/json",
   });
   print("MASUK 3");
   // print(response.body);
@@ -21,6 +21,7 @@ Future<List<Watchlist>> fetchWatchlist() async {
   List<Watchlist> listWatchlist = [];
   for (var d in data) {
     if (d != null) {
+      print(d);
       listWatchlist.add(Watchlist.fromJson(d));
     }
   }

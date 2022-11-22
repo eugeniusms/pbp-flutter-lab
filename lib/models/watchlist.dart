@@ -21,16 +21,16 @@ class Watchlist {
   bool watched;
   String title;
   int rating;
-  DateTime release_date;
+  String release_date;
   String review;
 
   factory Watchlist.fromJson(Map<String, dynamic> json) => Watchlist(
         id: json["pk"],
-        watched: json["watched"],
-        title: json["title"],
-        rating: json["rating"],
-        release_date: DateTime.parse(json["release_date"]),
-        review: json["review"],
+        watched: json["fields"]["watched"],
+        title: json["fields"]["title"],
+        rating: json["fields"]["rating"],
+        release_date: json["fields"]["release_date"],
+        review: json["fields"]["review"],
       );
 
   Map<String, dynamic> toJson() => {
@@ -38,7 +38,7 @@ class Watchlist {
         "watched": watched,
         "title": title,
         "rating": rating,
-        "release_date": release_date.toIso8601String(),
+        "release_date": release_date,
         "review": review,
       };
 }

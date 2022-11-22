@@ -21,9 +21,13 @@ Future<List<Watchlist>> fetchWatchlist() async {
   List<Watchlist> listWatchlist = [];
   for (var d in data) {
     if (d != null) {
-      print(d);
+      // print(d);
       listWatchlist.add(Watchlist.fromJson(d));
     }
+  }
+
+  for (var d in listWatchlist) {
+    print(d.title);
   }
 
   return listWatchlist;

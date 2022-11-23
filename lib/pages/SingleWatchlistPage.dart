@@ -28,13 +28,31 @@ class SingleWatchlistPage extends StatelessWidget {
                 child: Column(
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
-                Text("Release Date: ${data.release_date}",
-                    style: TextStyle(fontSize: 16)),
-                Text("Rating: ${data.rating}/5",
-                    style: TextStyle(fontSize: 16)),
-                Text("Status: ${data.watched}", style: TextStyle(fontSize: 16)),
-                Text("Review: \n${data.review}",
-                    style: TextStyle(fontSize: 16)),
+                Row(children: [
+                  Text("Release Date: ",
+                      style:
+                          TextStyle(fontSize: 16, fontWeight: FontWeight.w700)),
+                  Text("${data.release_date}", style: TextStyle(fontSize: 16))
+                ]),
+                Row(children: [
+                  Text("Rating: ",
+                      style:
+                          TextStyle(fontSize: 16, fontWeight: FontWeight.w700)),
+                  Text("${data.rating}/5", style: TextStyle(fontSize: 16))
+                ]),
+                Row(children: [
+                  Text("Status: ",
+                      style:
+                          TextStyle(fontSize: 16, fontWeight: FontWeight.w700)),
+                  Text("${data.watched ? "watched" : "not yet watched"}",
+                      style: TextStyle(fontSize: 16))
+                ]),
+                Column(crossAxisAlignment: CrossAxisAlignment.start, children: [
+                  Text("Review: ",
+                      style:
+                          TextStyle(fontSize: 16, fontWeight: FontWeight.w700)),
+                  Text("${data.review}", style: TextStyle(fontSize: 16))
+                ]),
               ],
             ))
           ],

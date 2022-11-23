@@ -120,7 +120,22 @@ Navigator bekerja selayaknya sebuah stack yang memiliki paradigma LIFO yaitu Las
 Pengambilan data JSON tanpa membuat model terlebih dahulu dapat dilakukan, nantinya data masih dalam wujud jsonDecode `var data = jsonDecode(utf8.decode(response.bodyBytes));`. Namun, hal ini tidak lebih baik dibanding membuat model terlebih dahulu sebelum pengambilan data JSON karena data tidak langsung diinisiasi menjadi suatu object sesuai class modelnya.
 
 ## Tugas 9's Widgets
-(BELUM ADA)
+| Widget | Fungsi | 
+| ----- | ----- |
+| MyWatchlistPage | Membuat halaman utama dari watchlist |
+| SingleWatchlistPage | Membuat halaman detail dari suatu watchlist |
+| FutureBuilder | Merupakan widget yang digunakan untuk melakukan proses asinkron |
+| Checkbox | Menampilkan Checkbox yang bisa diklik |
+| MaterialPageRoute | Mengarahkan routing ke halaman (widget) tertentu | 
+| Drawer | Membuat drawer navigator |
+| ListTile | Membuat list beberapa tile |
+| Scaffold | Mengatur layout dari widget yang ada di dalamnya |
+| AppBar | Menambahkan bar aplikasi yang berisi title dengan align left | 
+| Text | Berisi sebuah Text dengan properti di dalamnya |
+| Center | Mengatur layout widget di dalamnya agar centered |
+| Column | Mengatur layout widget di dalamnya agar turun ke bawah (tidak inline-flex) |
+| TextStyle | Mengatur style dari sebuah text |
+| Container | Menampung beberapa widget di dalamnya |
 
 ## Mekanisme Pengambilan Data dari JSON ke Flutter
 1.  JSON ditampilkan di halaman asal proyek MyWatchlist di `https://pbp-assignment-eugeniusms.herokuapp.com/mywatchlist/json/`

@@ -114,6 +114,87 @@ Navigator bekerja selayaknya sebuah stack yang memiliki paradigma LIFO yaitu Las
 -   Dart Playground<br>
     https://dartpad.dev/?
 
+# Tugas 9
+
+## Apakah bisa kita melakukan pengambilan data JSON tanpa membuat model terlebih dahulu? Jika iya, apakah hal tersebut lebih baik daripada membuat model sebelum melakukan pengambilan data JSON?
+Pengambilan data JSON tanpa membuat model terlebih dahulu dapat dilakukan, nantinya data masih dalam wujud jsonDecode `var data = jsonDecode(utf8.decode(response.bodyBytes));`. Namun, hal ini tidak lebih baik dibanding membuat model terlebih dahulu sebelum pengambilan data JSON karena data tidak langsung diinisiasi menjadi suatu object sesuai class modelnya.
+
+## Tugas 9's Widgets
+(BELUM ADA)
+
+## Mekanisme Pengambilan Data dari JSON ke Flutter
+1.  JSON ditampilkan di halaman asal proyek MyWatchlist di `https://pbp-assignment-eugeniusms.herokuapp.com/mywatchlist/json/`
+2.  JSON difetch ke dalam fetch.dart sesuai urlnya dengan header `"Access-Control-Allow-Origin": "*", "Content-Type": "application/json"`
+3.  JSON yang telah difetch akan disesuaikan bodynya menuju model Watchlist sesuai dengan properti-properti
+4.  Data list dalam model Watchlist dipanggil dalam MyWatchlistPage untuk distyling card satu per satu
+5.  Setiap card memiliki onTap() yang jika diklik maka data object Watchlist pada card tersebut dipassing ke SingleWatchlistPage untuk ditampilkan khusus pada data tersebut
+
+## Project Implementation
+1.  Menambahkan ListTile() menuju MyWatchlistPage di dalam Drawer.dart
+2.  Membuat file model mywatchlist bernama watchlist.dart yang berisi model dari Watchlist
+    ```
+    class Watchlist {
+    Watchlist({
+        required this.id,
+        required this.watched,
+        required this.title,
+        required this.rating,
+        required this.release_date,
+        required this.review,
+    });
+    ```
+3.  Melakukan fetch di dalam `utils/fetch.dart` ke alamat `'https://pbp-assignment-eugeniusms.herokuapp.com/mywatchlist/json/'`
+4.  Menambahkan inisiasi class sesuai dengan JSON yang akan difetch
+    ```
+    factory Watchlist.fromJson(Map<String, dynamic> json) => Watchlist(
+        id: json["pk"],
+        watched: json["fields"]["watched"],
+        title: json["fields"]["title"],
+        rating: json["fields"]["rating"],
+        release_date: json["fields"]["release_date"],
+        review: json["fields"]["review"],
+    );
+    ```
+5.  Menambahkan object yang difetch ke dalam Flutter list di dalam fetch.dart
+    ```
+    List<Watchlist> listWatchlist = [];
+    for (var d in data) {
+        if (d != null) {
+        listWatchlist.add(Watchlist.fromJson(d));
+        }
+    }
+    ```
+6.  Menyusun halaman MyWatchlistPage agar berisi daftar film sesuai isi elemen dari listWatchlist
+7.  `BONUS` Menambahkan checkbox pada card
+    ```
+    Checkbox(
+        value: snapshot.data![index].watched,
+        onChanged: (bool? value) {
+            setState(() {
+            this.value =
+                snapshot.data![index].watched
+                    ? false
+                    : true;
+            });
+        },
+    ),
+    ```
+8.  `BONUS` Menambahkan colored outline border
+    ```
+    border: Border.all(
+        color: snapshot.data![index].watched
+            ? Colors.green
+            : Colors.red,
+        width: 5
+    ),
+    ```
+9.  Menambahkan halaman detail `SingleWatchlistPage` dengan cara passing object Watchlist as a data ke widget SingleWatchlistPage untuk ditampilkan sesuai objectnya dengan properti-propertinya
+    ```
+    final Watchlist data;
+    SingleWatchlistPage({required this.data});
+    ```
+10. Melakukan styling di halaman detail
+
 ## Flutter
 This project is a starting point for a Flutter application.
 

@@ -10,11 +10,13 @@ class MyWatchlistPage extends StatefulWidget {
 }
 
 class _MyWatchlistPageState extends State<MyWatchlistPage> {
+  bool value = false;
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: const Text('To Do'),
+        title: const Text('My Watchlist'),
       ),
       // menambahkan Drawer untuk navigasi antarhalaman
       drawer: buildDrawer(context),
@@ -59,7 +61,23 @@ class _MyWatchlistPageState extends State<MyWatchlistPage> {
                                 ),
                               ),
                               const SizedBox(height: 10),
-                              Text("${snapshot.data![index].watched}"),
+                              Row(
+                                children: [
+                                  Checkbox(
+                                    value: snapshot.data![index].watched,
+                                    onChanged: (bool? value) {
+                                      setState(() {
+                                        this.value =
+                                            snapshot.data![index].watched
+                                                ? false
+                                                : true;
+                                      });
+                                    },
+                                  ),
+                                  Text(
+                                      "${snapshot.data![index].watched ? "Watched" : "Not Yet Watched"}"),
+                                ],
+                              )
                             ],
                           ),
                         ));

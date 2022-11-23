@@ -1,6 +1,8 @@
+import 'package:counter_7/models/watchlist.dart';
 import 'package:flutter/material.dart';
 import 'package:counter_7/utils/fetch.dart';
 import 'package:counter_7/components/Drawer.dart';
+import 'package:counter_7/pages/SingleWatchlistPage.dart';
 
 class MyWatchlistPage extends StatefulWidget {
   const MyWatchlistPage({super.key});
@@ -39,7 +41,8 @@ class _MyWatchlistPageState extends State<MyWatchlistPage> {
               } else {
                 return ListView.builder(
                     itemCount: snapshot.data!.length,
-                    itemBuilder: (_, index) => Container(
+                    itemBuilder: (_, index) => InkWell(
+                        child: Container(
                           margin: const EdgeInsets.symmetric(
                               horizontal: 16, vertical: 12),
                           padding: const EdgeInsets.all(20.0),
@@ -85,7 +88,16 @@ class _MyWatchlistPageState extends State<MyWatchlistPage> {
                               )
                             ],
                           ),
-                        ));
+                        ),
+                        onTap: () {
+                          Navigator.push(
+                            context,
+                            MaterialPageRoute(
+                                builder: (context) => SingleWatchlistPage(
+                                      data: snapshot.data![index],
+                                    )),
+                          );
+                        }));
               }
             }
           }),

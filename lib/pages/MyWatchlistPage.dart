@@ -45,6 +45,11 @@ class _MyWatchlistPageState extends State<MyWatchlistPage> {
                           padding: const EdgeInsets.all(20.0),
                           decoration: BoxDecoration(
                               color: Colors.white,
+                              border: Border.all(
+                                  color: snapshot.data![index].watched
+                                      ? Colors.green
+                                      : Colors.red,
+                                  width: 5),
                               borderRadius: BorderRadius.circular(15.0),
                               boxShadow: const [
                                 BoxShadow(color: Colors.black, blurRadius: 2.0)
